@@ -1,0 +1,116 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffe6f0; /* rosa chiaro */
+  color: #333;
+}
+
+header {
+  background-color: white;
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 2px solid #f2f2f2;
+}
+
+.logo {
+  max-width: 250px;
+  display: block;
+  margin: 0 auto -10px;
+}
+
+header h1 {
+  font-size: 28px;
+  margin: 0;
+  color: #c06c9c;
+}
+
+.prodotti {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.prodotto {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  flex: 1 1 300px; /* base 300px, flessibilità */
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+}
+
+.prodotto img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #d672a9;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #be5e96;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  font-size: 14px;
+  color: #666;
+  border-top: 2px solid #f2f2f2;
+}
+
+.prodotto .prezzo {
+  font-size: 20px;
+  color: #c06c9c; /* tono rosa scuro */
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  background-color: #25D366; /* verde WhatsApp */
+  color: white;
+  padding: 8px 14px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 15px;
+  transition: background-color 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background-color: #20b858;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 22px;
+  }
+
+  .prodotto {
+    padding: 10px;
+  }
+
+  .prodotto .prezzo {
+    font-size: 18px;
+  }
+
+  .whatsapp-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
