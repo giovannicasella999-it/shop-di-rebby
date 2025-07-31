@@ -114,3 +114,32 @@ footer {
     padding: 8px 12px;
   }
 }
+.non-disponibile {
+  opacity: 0.7;
+}
+
+.non-disponibile img {
+  filter: grayscale(100%);
+}
+
+.non-disponibile .disponibilita {
+  color: red;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 8px 0;
+}
+
+.chiedi-disponibilita {
+  background-color: #ffa500; /* arancione */
+  color: white;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.chiedi-disponibilita:hover {
+  background-color: #e69500;
+}
