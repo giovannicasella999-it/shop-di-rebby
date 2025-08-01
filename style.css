@@ -72,14 +72,14 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: transparent;
+  background-color: #ffcce5; /* rosa come il sito */
   color: white;
   font-weight: bold;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   font-size: 14px;
   z-index: 1000;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* ombra visibile */
 }
 
 
@@ -152,3 +152,40 @@ footer {
 .chiedi-disponibilita:hover {
   background-color: #e69500;
 }
+
+.contenitore {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.contenuto-prodotti {
+  flex: 1;
+}
+
+.barra-laterale {
+  width: 200px;
+  margin-left: 30px;
+}
+
+.barra-laterale input[type="text"],
+.barra-laterale select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+@media (max-width: 768px) {
+  .contenitore {
+    flex-direction: column;
+  }
+
+  .barra-laterale {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
