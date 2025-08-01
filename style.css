@@ -25,6 +25,19 @@ header h1 {
   color: #c06c9c;
 }
 
+#filtri {
+  margin: 20px;
+  text-align: center;
+}
+
+#filtri input,
+#filtri select {
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 .prodotti {
   display: flex;
   flex-wrap: wrap;
@@ -53,19 +66,19 @@ header h1 {
   border-radius: 8px;
 }
 
-button {
-  background-color: #d672a9;
-  border: none;
+.whatsapp-btn {
+  background-color: #25D366;
   color: white;
   padding: 10px 20px;
-  margin-top: 10px;
-  cursor: pointer;
+  text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
 }
 
-button:hover {
-  background-color: #be5e96;
+.whatsapp-btn:hover {
+  background-color: #1da851;
 }
 
 footer {
@@ -73,7 +86,7 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 25px;
   background-color: #ffcce5;
   color: white;
   font-weight: bold;
@@ -84,7 +97,6 @@ footer {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* Spazio per non far coprire i contenuti dal footer */
 .footer-spacer {
   height: 80px;
 }
@@ -93,4 +105,17 @@ footer {
   font-size: 20px;
   color: #c06c9c;
   margin: 10px 0;
-  font-weight:
+  font-weight: bold;
+}
+
+.prodotto.non-disponibile {
+  opacity: 0.6;
+}
+
+.chiedi-disponibilita {
+  background-color: #ff9900;
+}
+
+.chiedi-disponibilita:hover {
+  background-color: #e68a00;
+}

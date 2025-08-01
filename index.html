@@ -6,41 +6,6 @@
   <title>Lo Shop di Rebby - Benvenuto!</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .carrello {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      background: white;
-      border: 2px solid #ff69b4;
-      padding: 10px;
-      border-radius: 10px;
-      z-index: 1000;
-    }
-    .carrello ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .carrello-btn {
-      background-color: #25D366;
-      color: white;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 10px;
-    }
-    .aggiungi-carrello {
-      display: inline-block;
-      margin-top: 5px;
-      padding: 6px 10px;
-      background-color: #ff69b4;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
     #filtri {
       margin: 20px;
       text-align: center;
@@ -74,38 +39,7 @@
 
 <section class="prodotti">
 <script>
-  const carrello = [];
-  function aggiungiAlCarrello(nome, prezzo) {
-    carrello.push({ nome, prezzo });
-    aggiornaCarrello();
-  }
-
-  function aggiornaCarrello() {
-    const lista = document.getElementById('lista-carrello');
-    lista.innerHTML = '';
-    let totale = 0;
-    carrello.forEach(p => {
-      const item = document.createElement('li');
-      item.textContent = `${p.nome} - €${p.prezzo}`;
-      lista.appendChild(item);
-      totale += parseFloat(p.prezzo);
-    });
-    document.getElementById('totale').textContent = `Totale: €${totale.toFixed(2)}`;
-    const testo = encodeURIComponent("Ciao, vorrei ordinare questi prodotti:\n" + carrello.map(p => `- ${p.nome} (€${p.prezzo})`).join("\n"));
-    document.getElementById('whatsapp-link').href = `https://wa.me/393514454625?text=${testo}`;
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('[data-disponibile="true"]').forEach(prodotto => {
-      const nome = prodotto.getAttribute('data-nome');
-      const prezzo = prodotto.getAttribute('data-prezzo');
-      const bottone = document.createElement('button');
-      bottone.textContent = 'Aggiungi al carrello';
-      bottone.className = 'aggiungi-carrello';
-      bottone.onclick = () => aggiungiAlCarrello(nome, prezzo);
-      prodotto.appendChild(bottone);
-    });
-
+document.addEventListener('DOMContentLoaded', () => {
     const ricerca = document.getElementById('barra-ricerca');
     const filtroCategoria = document.getElementById('seleziona-categoria');
 
@@ -125,7 +59,6 @@
   });
 </script>
 
-<section class="prodotti">
   <!-- OGNI DIV AVRA' GLI ATTRIBUTI data-disponibile, data-nome e data-prezzo PER I PRODOTTI DISPONIBILI -->
   <!-- PER BREVITÀ NON RIPORTIAMO TUTTI I PRODOTTI QUI, MA SONO TUTTI COME PRIMA, AGGIUNGENDO SOLO QUESTI ATTRIBUTI -->
   <!-- ESEMPIO: -->
