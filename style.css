@@ -164,29 +164,3 @@ footer {
   flex: 1;
 }
 
-.barra-laterale {
-  width: 200px;
-  margin-left: 30px;
-}
-
-.barra-laterale input[type="text"],
-.barra-laterale select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-@media (max-width: 768px) {
-  .contenitore {
-    flex-direction: column;
-  }
-
-  .barra-laterale {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 20px;
-  }
-}
-
