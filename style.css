@@ -45,11 +45,12 @@ header h1 {
 }
 
 .prodotto img {
-  width: 90%;
-  max-width: 200px;
-  height: auto;
+  width: 100%;
+  height: 220px;            /* altezza fissa */
+  object-fit: cover;        /* taglia e riempie senza deformare */
   display: block;
   margin: 0 auto;
+  border-radius: 8px;       /* opzionale: angoli arrotondati */
 }
 
 button {
