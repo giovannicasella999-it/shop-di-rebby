@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #ffe6f0; /* rosa chiaro */
+  background-color: #ffe6f0;
   color: #333;
 }
 
@@ -59,8 +59,8 @@ header h1 {
 
 .prodotto img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  max-height: 220px;
+  object-fit: contain;
   display: block;
   margin: 0 auto;
   border-radius: 8px;
@@ -86,7 +86,7 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 25px;
+  height: 50px;
   background-color: #ffcce5;
   color: white;
   font-weight: bold;
@@ -110,6 +110,13 @@ footer {
 
 .prodotto.non-disponibile {
   opacity: 0.6;
+}
+
+.prodotto .disponibilita {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  margin-top: 10px;
 }
 
 .chiedi-disponibilita {
