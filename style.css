@@ -45,9 +45,11 @@ header h1 {
 }
 
 .prodotto img {
-  width: 100%;
+  width: 90%;
+  max-width: 300px;
   height: auto;
-  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
 }
 
 button {
@@ -66,13 +68,17 @@ button:hover {
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffc0cb; /* rosa chiaro o quello che usi */
   text-align: center;
-  padding: 20px;
-  background: white;
+  padding: 10px;
   font-size: 14px;
-  color: #666;
-  border-top: 2px solid #f2f2f2;
+  z-index: 1000;
 }
+
 
 .prodotto .prezzo {
   font-size: 20px;
