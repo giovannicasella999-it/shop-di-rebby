@@ -38,7 +38,7 @@ header h1 {
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 15px;
-  flex: 1 1 300px; /* base 300px, flessibilità */
+  flex: 1 1 300px;
   max-width: 90%;
   text-align: center;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
@@ -46,11 +46,11 @@ header h1 {
 
 .prodotto img {
   width: 100%;
-  height: 220px;            /* altezza fissa */
-  object-fit: cover;        /* taglia e riempie senza deformare */
+  height: 220px;
+  object-fit: cover;
   display: block;
   margin: 0 auto;
-  border-radius: 8px;       /* opzionale: angoli arrotondati */
+  border-radius: 8px;
 }
 
 button {
@@ -80,100 +80,17 @@ footer {
   text-align: center;
   padding: 10px;
   font-size: 14px;
-  z-index: 1000; /* più basso del carrello */
+  z-index: 1000;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
+/* Spazio per non far coprire i contenuti dal footer */
 .footer-spacer {
-  height: 60px; /* o quanto basta per non coprire il carrello */
+  height: 80px;
 }
 
 .prodotto .prezzo {
   font-size: 20px;
-  color: #c06c9c; /* tono rosa scuro */
+  color: #c06c9c;
   margin: 10px 0;
-  font-weight: bold;
-}
-
-.whatsapp-btn {
-  display: inline-block;
-  background-color: #25D366; /* verde WhatsApp */
-  color: white;
-  padding: 6px 10px;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 15px;
-  transition: background-color 0.3s;
-}
-
-.whatsapp-btn:hover {
-  background-color: #20b858;
-}
-
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 22px;
-  }
-
-  .prodotto {
-    padding: 10px;
-  }
-
-  .prodotto .prezzo {
-    font-size: 18px;
-  }
-
-  .whatsapp-btn {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-}
-.non-disponibile {
-  opacity: 0.7;
-}
-
-.non-disponibile img {
-  filter: grayscale(100%);
-}
-
-.non-disponibile .disponibilita {
-  color: red;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 8px 0;
-}
-
-.chiedi-disponibilita {
-  background-color: #ffa500; /* arancione */
-  color: white;
-  font-size: 14px;
-  padding: 8px 12px;
-  border-radius: 4px;
-  display: inline-block;
-  text-decoration: none;
-  margin-top: 5px;
-}
-
-.chiedi-disponibilita:hover {
-  background-color: #e69500;
-}
-
-.carrello-flottante {
-  position: fixed;
-  bottom: 90px; /* aumenta leggermente per distanziarlo dal footer */
-  right: 20px;
-  background-color: #d672a9;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 25px;
-  font-weight: bold;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-  cursor: pointer;
-  z-index: 1100; /* z-index più alto del footer */
-  transition: background-color 0.3s;
-}
-
-.carrello-flottante:hover {
-  background-color: #be5e96;
-}
-
+  font-weight:

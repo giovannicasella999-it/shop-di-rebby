@@ -252,22 +252,43 @@ Famiglia olfattiva: Floreale, fruttata gourmand.<br>
 
 </section>
 
-<div class="carrello-flottante">
-  🛒 Carrello (2)
-</div>
+ <div class="carrello-flottante" onclick="toggleCarrello()">Carrello</div>
 
-<div class="carrello">
-  <strong>Il tuo carrello:</strong>
-  <ul id="lista-carrello"></ul>
-  <p id="totale">Totale: €0.00</p>
-  <a id="whatsapp-link" class="carrello-btn" href="#" target="_blank">Ordina su WhatsApp</a>
-</div>
+  <div id="contenitore-carrello" style="display:none; position: fixed; bottom: 150px; right: 20px; background: white; border: 2px solid #d672a9; border-radius: 10px; padding: 10px; z-index: 9999;">
+    <strong>Il tuo carrello:</strong>
+    <p id="totale">Totale: €0.00</p>
+    <a id="link-whatsapp" class="whatsapp-btn" target="_blank">Ordina via WhatsApp</a>
+  </div>
 
-<footer>
-  <p>&copy; 2025 Shop di Rebby - Tutti i diritti riservati</p>
-</footer>
+  <div class="footer-spacer"></div>
+  <footer>
+    &copy; 2025 Shop di Rebby - Tutti i diritti riservati
+  </footer>
 
-<div class="footer-spacer"></div>
+  <script>
+    let totale = 0;
+    let carrello = [];
 
+    function aggiungiAlCarrello(nome, prezzo) {
+      carrello.push({ nome, prezzo });
+      totale += prezzo;
+      document.getElementById('totale').textContent = `Totale: €${totale.toFixed(2)}`;
+      aggiornaLinkWhatsApp();
+    }
+
+    function aggiornaLinkWhatsApp() {
+      const messaggio = encodeURIComponent(
+        'Ciao! Ecco cosa vorrei ordinare:\n' +
+        carrello.map(p => `- ${p.nome}: €${p.prezzo.toFixed(2)}`).join('\n') +
+        `\nTotale: €${totale.toFixed(2)}`
+      );
+      document.getElementById('link-whatsapp').href = `https://wa.me/393514454625?text=${messaggio}`;
+    }
+
+    function toggleCarrello() {
+      const carrelloBox = document.getElementById('contenitore-carrello');
+      carrelloBox.style.display = carrelloBox.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
 </body>
 </html>
