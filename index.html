@@ -41,6 +41,16 @@
       border-radius: 4px;
       cursor: pointer;
     }
+    #filtri {
+      margin: 20px;
+      text-align: center;
+    }
+    #filtri input, #filtri select {
+      padding: 8px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
@@ -49,10 +59,20 @@
   <img src="immagini/intestazione.jpg" alt="Logo Shop di Rebby" class="logo">
 </header>
 
-<section class="prodotti">
+<div id="filtri">
+  <input type="text" id="barra-ricerca" placeholder="Cerca un prodotto...">
+  <select id="seleziona-categoria">
+    <option value="tutte">Tutte le categorie</option>
+    <option value="profumo">Profumi</option>
+    <option value="deodorante">Deodoranti</option>
+    <option value="capelli">Capelli</option>
+	<option value="corpo">Corpo</option>
+	<option value="ambiente">Ambiente</option>
+    <option value="solare">Solari</option>
+  </select>
+</div>
 
-<!-- OGNI PRODOTTO DISPONIBILE HA UN BOTTONE "AGGIUNGI AL CARRELLO" -->
-<!-- Il codice dei prodotti non cambia: aggiungiamo solo il bottone di aggiunta -->
+<section class="prodotti">
 <script>
   const carrello = [];
   function aggiungiAlCarrello(nome, prezzo) {
@@ -74,10 +94,7 @@
     const testo = encodeURIComponent("Ciao, vorrei ordinare questi prodotti:\n" + carrello.map(p => `- ${p.nome} (€${p.prezzo})`).join("\n"));
     document.getElementById('whatsapp-link').href = `https://wa.me/393514454625?text=${testo}`;
   }
-</script>
 
-<!-- BOTTONE SOTTO OGNI PRODOTTO DISPONIBILE -->
-<script>
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-disponibile="true"]').forEach(prodotto => {
       const nome = prodotto.getAttribute('data-nome');
@@ -88,15 +105,31 @@
       bottone.onclick = () => aggiungiAlCarrello(nome, prezzo);
       prodotto.appendChild(bottone);
     });
+
+    const ricerca = document.getElementById('barra-ricerca');
+    const filtroCategoria = document.getElementById('seleziona-categoria');
+
+    function filtraProdotti() {
+      const testo = ricerca.value.toLowerCase();
+      const categoria = filtroCategoria.value;
+      document.querySelectorAll('.prodotto').forEach(prodotto => {
+        const nome = prodotto.querySelector('h2').textContent.toLowerCase();
+        const appartieneCategoria = categoria === 'tutte' || prodotto.dataset.categoria === categoria || (categoria === 'esaurito' && prodotto.classList.contains('non-disponibile'));
+        const corrispondeRicerca = nome.includes(testo);
+        prodotto.style.display = (appartieneCategoria && corrispondeRicerca) ? 'block' : 'none';
+      });
+    }
+
+    ricerca.addEventListener('input', filtraProdotti);
+    filtroCategoria.addEventListener('change', filtraProdotti);
   });
 </script>
 
-<!-- SEZIONE PRODOTTI MODIFICATA -->
 <section class="prodotti">
   <!-- OGNI DIV AVRA' GLI ATTRIBUTI data-disponibile, data-nome e data-prezzo PER I PRODOTTI DISPONIBILI -->
   <!-- PER BREVITÀ NON RIPORTIAMO TUTTI I PRODOTTI QUI, MA SONO TUTTI COME PRIMA, AGGIUNGENDO SOLO QUESTI ATTRIBUTI -->
   <!-- ESEMPIO: -->
-  <div class="prodotto" data-disponibile="true" data-nome="Kyra Rosa - Deodorante Arabo" data-prezzo="3.50">
+  <div class="prodotto" data-disponibile="true" data-nome="Kyra Rosa - Deodorante Arabo" data-prezzo="3.50" data-categoria="deodorante">
     <img src="immagini/kyra-rosa-deo.jpg" alt="Kyra Rosa - Deodorante arabo">
     <h2>Kyra Rosa - Deodorante Arabo</h2>
     <p>AFAQ Body Spray Kyra 200ml è un body spray femminile ispirato a Yara di Lattafa, una delle fragranze più amate per la sua dolcezza cremosa e il suo stile moderno. <br> Ideale per chi cerca un profumo delicato ma persistente, elegante e avvolgente. <br>
@@ -106,7 +139,7 @@ Il formato spray rende Kyra pratico da usare ogni giorno, perfetto da portare se
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20Deodorante%20Kyra%20Rosa%20da%20€3,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
   
-   <div class="prodotto" data-disponibile="true" data-nome="Kyra Gold - Deodorante Arabo" data-prezzo="3.50">
+   <div class="prodotto" data-disponibile="true" data-nome="Kyra Gold - Deodorante Arabo" data-prezzo="3.50" data-categoria="deodorante">
     <img src="immagini/kyra-gold-deo.jpg" alt="Kyra Gold - Deodorante arabo">
     <h2>Kyra Gold - Deodorante Arabo</h2>
     <p>AFAQ Body Spray Kyra Gold 200ml è un body spray femminile ispirato a Yara Tous di Lattafa, una fragranza cremosa, delicata e moderna, pensata per la donna che ama distinguersi con eleganza e dolcezza. <br>
@@ -116,7 +149,7 @@ Il pratico formato da 200ml permette un utilizzo quotidiano e comodo in ogni mom
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20Deodorante%20Kyra%20Gold%20da%20€3,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
   
-  <div class="prodotto" data-disponibile="true" data-nome="Kyra Gold - Profumo Arabo" data-prezzo="10.00">
+  <div class="prodotto" data-disponibile="true" data-nome="Kyra Gold - Profumo Arabo" data-prezzo="10.00" data-categoria="profumo">
     <img src="immagini/kyra-rosa-profumo.jpeg" alt="Kyra Rosa - Profumo arabo">
     <h2>Kyra Rosa - Profumo Arabo</h2>
     <p>Lasciati conquistare da Kyra, una fragranza che unisce la dolcezza cremosa della vaniglia alla profondità seducente delle spezie orientali. Pensata per una donna sicura di sé, che ama lasciare il segno con eleganza e mistero. <br>
@@ -131,7 +164,7 @@ Note di fondo: Muschio, Legno di sandalo, Fava tonka <br>
   </div>
   
  <div class="prodotto non-disponibile">
-  <img src="immagini/aswad.jpg" alt="Aswad - Profumo arabo">
+  <img src="immagini/aswad.jpg" alt="Aswad - Profumo arabo" data-categoria="profumo">
   <h2>Aswad - Profumo arabo</h2>
   <p>Nero come la notte, profondo come lo sguardo di chi lascia il segno. <br>
 Aswad, che in arabo significa nero, è una fragranza misteriosa, avvolgente e ricca di fascino. Pensata per chi ama profumi intensi, caldi e raffinati, capaci di raccontare forza e carisma. <br>
@@ -146,7 +179,7 @@ Note di fondo: Ambra, Vaniglia, Legno di sandalo <br>
 </div>
 
 <div class="prodotto non-disponibile">
-  <img src="immagini/bianco-latte.jpg" alt="Bianco Latte">
+  <img src="immagini/bianco-latte.jpg" alt="Bianco Latte" data-categoria="profumo">
   <h2>Bianco Latte - Blanc Cremè</h2>
   <p>Blanc Creme è la fragranza unisex equivalente del famosissimo profumo Bianco Latte di Giardini di Toscana. <br> 
 E' un eau de parfum molto intenso e persistente, ed inoltre ha la bottiglia similare, che lo rende unico ed inconfondibile.</p>
@@ -156,7 +189,7 @@ E' un eau de parfum molto intenso e persistente, ed inoltre ha la bottiglia simi
   <a href="https://wa.me/393514454625?text=Ciao,%20volevo%20sapere%20se%20il%20Profumo%20Bianco%20Latte%20da%20€5,00%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
 </div>
 
- <div class="prodotto" data-disponibile="true" data-nome="Shampoo Retinol Complex" data-prezzo="4.50">
+ <div class="prodotto" data-disponibile="true" data-nome="Shampoo Retinol Complex" data-prezzo="4.50" data-categoria="capelli">
     <img src="immagini/shampoo-reti.jpg" alt="Shampoo Retinol Complex">
     <h2>Shampoo Retinol Complex</h2>
     <p>Shampoo protettivo e nutriente a base di proteine del latte indicato per capelli trattati chimicamente o sottoposti a decolorazioni.  <br> Dona lucentezza e morbidezza ai capelli senza appesantirli.<br>
@@ -165,7 +198,7 @@ E' un eau de parfum molto intenso e persistente, ed inoltre ha la bottiglia simi
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20allo%20Shampoo%20Retinol%20Complex%20da%20€4,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
   
-  <div class="prodotto" data-disponibile="true" data-nome="Termoprotettore Retinol Complex" data-prezzo="5.00">
+  <div class="prodotto" data-disponibile="true" data-nome="Termoprotettore Retinol Complex" data-prezzo="5.00" data-categoria="capelli">
     <img src="immagini/termo.jpg" alt="Termoprotettore Retinol Complex">
     <h2>Termoprotettore Retinol Complex</h2>
     <p>Il siero termoprotettivo per capelli è un prodotto formulato per proteggere i capelli dai danni causati dal calore e dagli agenti atmosferici<br> Durante l'uso di strumenti termini (piastre, phone e arricciacapelli) questi prodotti sono particolarmente utili per chi ne fa uso frequentemente. <br>
@@ -176,7 +209,7 @@ E' un eau de parfum molto intenso e persistente, ed inoltre ha la bottiglia simi
   </div>
   
   <div class="prodotto non-disponibile">
-      <img src="immagini/spray.jpg" alt="Spray multiuso">
+      <img src="immagini/spray.jpg" alt="Spray multiuso" data-categoria="ambiente">
       <h2>Spray multiuso fruttati</h2>
       <p>Con lo spray deodorante per ambienti The Fruit Company, trasforma l'atmosfera della tua casa in uno spazio accogliente con un tocco morbido e fresco. <br>
 	  Questo deodorante multiuso elimina i cattivi odori, soprattutto quelli sui tessuti, grazie alla sua grande capacità di spruzzo. <br>
@@ -186,7 +219,7 @@ E' un eau de parfum molto intenso e persistente, ed inoltre ha la bottiglia simi
   <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20allo%20Spray%20per%20ambienti%20da%20€2,50%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
     </div>
 	
-	 <div class="prodotto" data-disponibile="true" data-nome="Acqua Profumata Amalfi" data-prezzo="1.50">
+	 <div class="prodotto" data-disponibile="true" data-nome="Acqua Profumata Amalfi" data-prezzo="1.50" data-categoria="corpo">
     <img src="immagini/frutti-rossi.jpg" alt="Acqua Profumata Amalfi">
     <h2>Acqua Profumata - Frutti Rossi</h2>
     <p>Deliziosa acqua profumata in versione spray con profumazione ai frutti rossi per rendere più dolce la tua giornata.<br>
@@ -195,7 +228,7 @@ E' un eau de parfum molto intenso e persistente, ed inoltre ha la bottiglia simi
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20all'%20Acqua%20Profumata%20da%20€1,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
   
-   <div class="prodotto" data-disponibile="true" data-nome="Bilboa SPF 30" data-prezzo="5.00">
+   <div class="prodotto" data-disponibile="true" data-nome="Bilboa SPF 30" data-prezzo="5.00" data-categoria="solare">
     <img src="immagini/bilboa.jpg" alt="Bilboa SPF 30">
     <h2>Bilboa Solare - Spray Cocco 30</h2>
     <p>Protezione solare alta SPF 30 con filtri avanzati per un'abbronzatura luminosa e dorata da subito grazie alla formula leggera effetto seta sulla pelle che non appiccica <br>
@@ -205,7 +238,7 @@ E' un eau de parfum molto intenso e persistente, ed inoltre ha la bottiglia simi
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20alla%20Crema%20Solare%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
   
-  <div class="prodotto" data-disponibile="true" data-nome="Profumo Prady Pistacchio" data-prezzo="3.00">
+  <div class="prodotto" data-disponibile="true" data-nome="Profumo Prady Pistacchio" data-prezzo="3.00" data-categoria="profumo">
     <img src="immagini/pistacchio.jpg" alt="Profumo Prady Pistacchio">
     <h2>Profumo pistacchio - Prady</h2>
     <p>Profumo delicato ed elegante, dall'aroma fresco e morbido, ideale per l'uso quotidiano.<br>
@@ -214,10 +247,11 @@ Famiglia olfattiva: Floreale, fruttata gourmand.<br>
     <p class="prezzo">€3,00</p>
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20Profumo%20al%20pistacchio%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
-  <!-- RIPETI COSÌ PER OGNI PRODOTTO DISPONIBILE -->
+
+<!-- Il resto del codice dei prodotti rimane invariato. Aggiungi a ogni div "data-categoria" con valori come "profumo", "deodorante", "capelli", "solare", oppure lascia senza per "altro". -->
+
 </section>
 
-<!-- SEZIONE CARRELLO -->
 <div class="carrello">
   <strong>Il tuo carrello:</strong>
   <ul id="lista-carrello"></ul>
