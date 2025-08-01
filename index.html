@@ -1,55 +1,136 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lo Shop di Rebby - Benvenuto!</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .carrello {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: white;
+      border: 2px solid #ff69b4;
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+    .carrello ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .carrello-btn {
+      background-color: #25D366;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .aggiungi-carrello {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 6px 10px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-  <header>
+<header>
   <img src="immagini/intestazione.jpg" alt="Logo Shop di Rebby" class="logo">
 </header>
 
-  <section class="prodotti">
-    <div class="prodotto">
-      <img src="immagini/kyra-rosa-deo.jpg" alt="Kyra Rosa - Deodorante arabo">
-      <h2>Kyra Rosa - Deodorante Arabo</h2>
-      <p>AFAQ Body Spray Kyra 200ml è un body spray femminile ispirato a Yara di Lattafa, una delle fragranze più amate per la sua dolcezza cremosa e il suo stile moderno. <br> Ideale per chi cerca un profumo delicato ma persistente, elegante e avvolgente. <br>
+<section class="prodotti">
+
+<!-- OGNI PRODOTTO DISPONIBILE HA UN BOTTONE "AGGIUNGI AL CARRELLO" -->
+<!-- Il codice dei prodotti non cambia: aggiungiamo solo il bottone di aggiunta -->
+<script>
+  const carrello = [];
+  function aggiungiAlCarrello(nome, prezzo) {
+    carrello.push({ nome, prezzo });
+    aggiornaCarrello();
+  }
+
+  function aggiornaCarrello() {
+    const lista = document.getElementById('lista-carrello');
+    lista.innerHTML = '';
+    let totale = 0;
+    carrello.forEach(p => {
+      const item = document.createElement('li');
+      item.textContent = `${p.nome} - €${p.prezzo}`;
+      lista.appendChild(item);
+      totale += parseFloat(p.prezzo);
+    });
+    document.getElementById('totale').textContent = `Totale: €${totale.toFixed(2)}`;
+    const testo = encodeURIComponent("Ciao, vorrei ordinare questi prodotti:\n" + carrello.map(p => `- ${p.nome} (€${p.prezzo})`).join("\n"));
+    document.getElementById('whatsapp-link').href = `https://wa.me/393514454625?text=${testo}`;
+  }
+</script>
+
+<!-- BOTTONE SOTTO OGNI PRODOTTO DISPONIBILE -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-disponibile="true"]').forEach(prodotto => {
+      const nome = prodotto.getAttribute('data-nome');
+      const prezzo = prodotto.getAttribute('data-prezzo');
+      const bottone = document.createElement('button');
+      bottone.textContent = 'Aggiungi al carrello';
+      bottone.className = 'aggiungi-carrello';
+      bottone.onclick = () => aggiungiAlCarrello(nome, prezzo);
+      prodotto.appendChild(bottone);
+    });
+  });
+</script>
+
+<!-- SEZIONE PRODOTTI MODIFICATA -->
+<section class="prodotti">
+  <!-- OGNI DIV AVRA' GLI ATTRIBUTI data-disponibile, data-nome e data-prezzo PER I PRODOTTI DISPONIBILI -->
+  <!-- PER BREVITÀ NON RIPORTIAMO TUTTI I PRODOTTI QUI, MA SONO TUTTI COME PRIMA, AGGIUNGENDO SOLO QUESTI ATTRIBUTI -->
+  <!-- ESEMPIO: -->
+  <div class="prodotto" data-disponibile="true" data-nome="Kyra Rosa - Deodorante Arabo" data-prezzo="3.50">
+    <img src="immagini/kyra-rosa-deo.jpg" alt="Kyra Rosa - Deodorante arabo">
+    <h2>Kyra Rosa - Deodorante Arabo</h2>
+    <p>AFAQ Body Spray Kyra 200ml è un body spray femminile ispirato a Yara di Lattafa, una delle fragranze più amate per la sua dolcezza cremosa e il suo stile moderno. <br> Ideale per chi cerca un profumo delicato ma persistente, elegante e avvolgente. <br>
 La profumazione si distingue per un mix armonioso di note fruttate, floreali e muschiate che coccolano i sensi e lasciano una scia morbida e femminile sulla pelle. <br>
 Il formato spray rende Kyra pratico da usare ogni giorno, perfetto da portare sempre con sé per un tocco di freschezza e profumo in ogni momento.</p>
-        💎 Formato: 200 ml <br>
-	  <p class="prezzo">€3,50</p>
-   <button onclick="aggiungiAlCarrello('Kyra Rosa - Deodorante Arabo', 3.50)">Aggiungi al carrello</button>
-    </div>
-	
-    <div class="prodotto">
-      <img src="immagini/kyra-gold-deo.jpg" alt="Kyra Gold - Deodorante arabo">
-      <h2>Kyra Gold - Deodorante Arabo</h2>
-      <p>AFAQ Body Spray Kyra Gold 200ml è un body spray femminile ispirato a Yara Tous di Lattafa, una fragranza cremosa, delicata e moderna, pensata per la donna che ama distinguersi con eleganza e dolcezza. <br>
+    <p class="prezzo">€3,50</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20Deodorante%20Kyra%20Rosa%20da%20€3,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+   <div class="prodotto" data-disponibile="true" data-nome="Kyra Gold - Deodorante Arabo" data-prezzo="3.50">
+    <img src="immagini/kyra-gold-deo.jpg" alt="Kyra Gold - Deodorante arabo">
+    <h2>Kyra Gold - Deodorante Arabo</h2>
+    <p>AFAQ Body Spray Kyra Gold 200ml è un body spray femminile ispirato a Yara Tous di Lattafa, una fragranza cremosa, delicata e moderna, pensata per la donna che ama distinguersi con eleganza e dolcezza. <br>
 La profumazione unisce note floreali raffinate a sfumature leggermente gourmand e muschiate, creando un equilibrio perfetto tra sensualità e leggerezza. Ideale da indossare tutti i giorni, Kyra Gold dona una sensazione di comfort, femminilità e sicurezza. <br>
 Il pratico formato da 200ml permette un utilizzo quotidiano e comodo in ogni momento della giornata, lasciando la pelle fresca e profumata a lungo.</p>
-       💎 Formato: 200 ml <br>
-	   <p class="prezzo">€3,50</p>
-  <button onclick="aggiungiAlCarrello('Kyra Rosa - Deodorante Arabo', 3.50)">Aggiungi al carrello</button>
-    </div>
-	
-	<div class="prodotto">
-      <img src="immagini/kyra-rosa-profumo.jpeg" alt="Kyra Rosa - Profumo arabo">
-      <h2>Kyra Rosa - Profumo Arabo</h2>
-      <p>Lasciati conquistare da Kyra, una fragranza che unisce la dolcezza cremosa della vaniglia alla profondità seducente delle spezie orientali. Pensata per una donna sicura di sé, che ama lasciare il segno con eleganza e mistero. <br>
+    <p class="prezzo">€3,50</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20Deodorante%20Kyra%20Gold%20da%20€3,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+  <div class="prodotto" data-disponibile="true" data-nome="Kyra Gold - Profumo Arabo" data-prezzo="10.00">
+    <img src="immagini/kyra-rosa-profumo.jpeg" alt="Kyra Rosa - Profumo arabo">
+    <h2>Kyra Rosa - Profumo Arabo</h2>
+    <p>Lasciati conquistare da Kyra, una fragranza che unisce la dolcezza cremosa della vaniglia alla profondità seducente delle spezie orientali. Pensata per una donna sicura di sé, che ama lasciare il segno con eleganza e mistero. <br>
 Un profumo dall’anima calda, elegante e persistente, perfetto per chi ama le fragranze avvolgenti che durano tutto il giorno. <br>
  ✨ Piramide olfattiva <br>
  Note di testa: Zenzero, Cannella, Pepe rosa <br>
 Note di cuore: Fiori bianchi, Ambra, Vaniglia bourbon <br>
 Note di fondo: Muschio, Legno di sandalo, Fava tonka <br>
-💎 Formato: 100 ml <br> </p>
-       <p class="prezzo">€10,00</p>
- <button onclick="aggiungiAlCarrello('Kyra Rosa - Deodorante Arabo', 3.50)">Aggiungi al carrello</button>
-    </div>
-	
-	<div class="prodotto non-disponibile">
+💎 Formato: 100 ml</p>
+    <p class="prezzo">€10,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20Profumo%20Kyra%20Rosa%20da%20€10,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+ <div class="prodotto non-disponibile">
   <img src="immagini/aswad.jpg" alt="Aswad - Profumo arabo">
   <h2>Aswad - Profumo arabo</h2>
   <p>Nero come la notte, profondo come lo sguardo di chi lascia il segno. <br>
@@ -63,8 +144,8 @@ Note di fondo: Ambra, Vaniglia, Legno di sandalo <br>
   <p class="disponibilita">PRODOTTO ESAURITO</p>
   <a href="https://wa.me/393514454625?text=Ciao,%20volevo%20sapere%20se%20il%20Profumo%20Aswad%20Arabo%20da%20€10,00%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
 </div>
-	
-	<div class="prodotto non-disponibile">
+
+<div class="prodotto non-disponibile">
   <img src="immagini/bianco-latte.jpg" alt="Bianco Latte">
   <h2>Bianco Latte - Blanc Cremè</h2>
   <p>Blanc Creme è la fragranza unisex equivalente del famosissimo profumo Bianco Latte di Giardini di Toscana. <br> 
@@ -75,26 +156,26 @@ E' un eau de parfum molto intenso e persistente, ed inoltre ha la bottiglia simi
   <a href="https://wa.me/393514454625?text=Ciao,%20volevo%20sapere%20se%20il%20Profumo%20Bianco%20Latte%20da%20€5,00%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
 </div>
 
-	<div class="prodotto">
-      <img src="immagini/shampoo-reti.jpg" alt="Shampoo Retinol Complex">
-      <h2>Shampoo Retinol Complex</h2>
-      <p>Shampoo protettivo e nutriente a base di proteine del latte indicato per capelli trattati chimicamente o sottoposti a decolorazioni.  <br> Dona lucentezza e morbidezza ai capelli senza appesantirli.<br>
-💎 Formato: 1000 ml <br> </p>
-       <p class="prezzo">€5,00</p>
-  <button onclick="aggiungiAlCarrello('Kyra Rosa - Deodorante Arabo', 3.50)">Aggiungi al carrello</button>
-    </div>
-	
-	<div class="prodotto">
-      <img src="immagini/termo.jpg" alt="Termoprotettore">
-      <h2>Termoprotettore Retinol Complex</h2>
-      <p>Il siero termoprotettivo per capelli è un prodotto formulato per proteggere i capelli dai danni causati dal calore e dagli agenti atmosferici<br> Durante l'uso di strumenti termini (piastre, phone e arricciacapelli) questi prodotti sono particolarmente utili per chi ne fa uso frequentemente. <br>
+ <div class="prodotto" data-disponibile="true" data-nome="Shampoo Retinol Complex" data-prezzo="4.50">
+    <img src="immagini/shampoo-reti.jpg" alt="Shampoo Retinol Complex">
+    <h2>Shampoo Retinol Complex</h2>
+    <p>Shampoo protettivo e nutriente a base di proteine del latte indicato per capelli trattati chimicamente o sottoposti a decolorazioni.  <br> Dona lucentezza e morbidezza ai capelli senza appesantirli.<br>
+💎 Formato: 1000 ml </p>
+    <p class="prezzo">€4,50</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20allo%20Shampoo%20Retinol%20Complex%20da%20€4,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+  <div class="prodotto" data-disponibile="true" data-nome="Termoprotettore Retinol Complex" data-prezzo="5.00">
+    <img src="immagini/termo.jpg" alt="Termoprotettore Retinol Complex">
+    <h2>Termoprotettore Retinol Complex</h2>
+    <p>Il siero termoprotettivo per capelli è un prodotto formulato per proteggere i capelli dai danni causati dal calore e dagli agenti atmosferici<br> Durante l'uso di strumenti termini (piastre, phone e arricciacapelli) questi prodotti sono particolarmente utili per chi ne fa uso frequentemente. <br>
 	  Il prodotto serve a prevenire la secchezza, la rottura e il danneggiamento dei capelli.<br>
-💎 Formato: 250 ml <br> </p>
-       <p class="prezzo">€5,00</p>
-   <button onclick="aggiungiAlCarrello('Kyra Rosa - Deodorante Arabo', 3.50)">Aggiungi al carrello</button>
-    </div>
-	
-	<div class="prodotto non-disponibile">
+💎 Formato: 250 ml </p>
+    <p class="prezzo">€5,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20Termoprotettore%20Retinol%20Complex%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+  <div class="prodotto non-disponibile">
       <img src="immagini/spray.jpg" alt="Spray multiuso">
       <h2>Spray multiuso fruttati</h2>
       <p>Con lo spray deodorante per ambienti The Fruit Company, trasforma l'atmosfera della tua casa in uno spazio accogliente con un tocco morbido e fresco. <br>
@@ -105,74 +186,48 @@ E' un eau de parfum molto intenso e persistente, ed inoltre ha la bottiglia simi
   <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20allo%20Spray%20per%20ambienti%20da%20€2,50%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
     </div>
 	
-	<div class="prodotto">
-      <img src="immagini/frutti-rossi.jpg" alt="Acqua Profumata Amalfi">
-      <h2>Acqua Profumata - Frutti Rossi</h2>
-      <p>Protezione solare alta SPF 30 con filtri avanzati per un'abbronzatura luminosa e dorata da subito grazie alla formula leggera effetto seta sulla pelle che non appiccica <br>
-	  La linea Coconut Glow con olio di cocco per una pelle sublime, luminosa e bella e con l’inconfondibile ed irresistibile profumo di cocco. <br>
-💎 Formato: 250 ml <br> </p>
-       <p class="prezzo">€1,50</p>
-  <button onclick="aggiungiAlCarrello('Kyra Rosa - Deodorante Arabo', 3.50)">Aggiungi al carrello</button>
-    </div>
-	
-	<div class="prodotto">
-      <img src="immagini/bilboa.jpg" alt="Bilboa SPF 30">
-      <h2>Bilboa Solare - Spray Cocco 30</h2>
-      <p>Deliziosa acqua profumata in versione spray con profumazione ai frutti rossi per rendere più dolce la tua giornata.<br>
-💎 Formato: 190 ml <br> </p>
-       <p class="prezzo">€5,00</p>
-  <button onclick="aggiungiAlCarrello('Kyra Rosa - Deodorante Arabo', 3.50)">Aggiungi al carrello</button>
-    </div>
-	
-	<div class="prodotto">
-      <img src="immagini/pistacchio.jpg" alt="Profumo Prady Pistacchio">
-      <h2>Profumo Pistacchio - Prady</h2>
-      <p>Profumo delicato ed elegante, dall'aroma fresco e morbido, ideale per l'uso quotidiano.<br>
-Famiglia olfattiva: Floreale, fruttata gourmand.<br>
-💎 Formato: 85 ml <br> </p>
-       <p class="prezzo">€3,00</p>
-  <button onclick="aggiungiAlCarrello('Kyra Rosa - Deodorante Arabo', 3.50)">Aggiungi al carrello</button>
-    </div>
-  </section>
-  
-	<script>
-    let carrello = [];
-
-    function aggiungiAlCarrello(nome, prezzo) {
-      carrello.push({ nome, prezzo });
-      alert(nome + " aggiunto al carrello!");
-    }
-
-    function inviaOrdine() {
-      if (carrello.length === 0) {
-        alert("Il carrello è vuoto.");
-        return;
-      }
-
-      let messaggio = "Ciao! Vorrei ordinare questi prodotti:%0A";
-      let totale = 0;
-
-      carrello.forEach(p => {
-        messaggio += "- " + p.nome + " (€" + p.prezzo.toFixed(2) + ")%0A";
-        totale += p.prezzo;
-      });
-
-      messaggio += "%0ATotale: €" + totale.toFixed(2);
-
-      let numero = "393514454625";
-      let url = "https://wa.me/" + numero + "?text=" + messaggio;
-
-      window.open(url, "_blank");
-    }
-  </script>
-  
-    <div style="text-align: center; margin-top: 30px;">
-    <button onclick="inviaOrdine()">Ordina su WhatsApp</button>
+	 <div class="prodotto" data-disponibile="true" data-nome="Acqua Profumata Amalfi" data-prezzo="1.50">
+    <img src="immagini/frutti-rossi.jpg" alt="Acqua Profumata Amalfi">
+    <h2>Acqua Profumata - Frutti Rossi</h2>
+    <p>Deliziosa acqua profumata in versione spray con profumazione ai frutti rossi per rendere più dolce la tua giornata.<br>
+💎 Formato: 190 ml </p>
+    <p class="prezzo">€1,50</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20all'%20Acqua%20Profumata%20da%20€1,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
-
-  <footer>
-    <p>&copy; 2025 Shop di Rebby - Tutti i diritti riservati</p>
-  </footer>
   
+   <div class="prodotto" data-disponibile="true" data-nome="Bilboa SPF 30" data-prezzo="5.00">
+    <img src="immagini/bilboa.jpg" alt="Bilboa SPF 30">
+    <h2>Bilboa Solare - Spray Cocco 30</h2>
+    <p>Protezione solare alta SPF 30 con filtri avanzati per un'abbronzatura luminosa e dorata da subito grazie alla formula leggera effetto seta sulla pelle che non appiccica <br>
+	  La linea Coconut Glow con olio di cocco per una pelle sublime, luminosa e bella e con l’inconfondibile ed irresistibile profumo di cocco. <br>
+💎 Formato: 250 ml</p>
+    <p class="prezzo">€5,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20alla%20Crema%20Solare%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+  <div class="prodotto" data-disponibile="true" data-nome="Profumo Prady Pistacchio" data-prezzo="3.00">
+    <img src="immagini/pistacchio.jpg" alt="Profumo Prady Pistacchio">
+    <h2>Profumo pistacchio - Prady</h2>
+    <p>Profumo delicato ed elegante, dall'aroma fresco e morbido, ideale per l'uso quotidiano.<br>
+Famiglia olfattiva: Floreale, fruttata gourmand.<br>
+💎 Formato: 85 ml</p>
+    <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20Profumo%20al%20pistacchio%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  <!-- RIPETI COSÌ PER OGNI PRODOTTO DISPONIBILE -->
+</section>
+
+<!-- SEZIONE CARRELLO -->
+<div class="carrello">
+  <strong>Il tuo carrello:</strong>
+  <ul id="lista-carrello"></ul>
+  <p id="totale">Totale: €0.00</p>
+  <a id="whatsapp-link" class="carrello-btn" href="#" target="_blank">Ordina su WhatsApp</a>
+</div>
+
+<footer>
+  <p>&copy; 2025 Shop di Rebby - Tutti i diritti riservati</p>
+</footer>
+
 </body>
 </html>
