@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" href="favicon.png" type="image/x-icon">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lo Shop di Rebby - Benvenuto!</title>
@@ -17,6 +19,22 @@
       border-radius: 4px;
     }
   </style>
+  
+  <!-- SEO base -->
+<meta name="description" content="Scopri i prodotti di Shop di Rebby. Ordina su WhatsApp rimani sempre aggiornata!">
+<meta name="keywords" content="cosmetici, profumi, deodoranti, artigianali, Shop di Rebby, bellezza, Palermo">
+<meta name="author" content="Shop di Rebby">
+
+<!-- Open Graph per social preview -->
+<meta property="og:title" content="Shop di Rebby - Cosmetici e Profumi">
+<meta property="og:description" content="Scopri i nostri profumi e deodoranti. Ordina su WhatsApp!">
+<meta property="og:image" content="https://giovannicasella999-it.github.io/shop-di-rebby/intestazione.jpg"> <!-- esempio: intestazione.jpg -->
+<meta property="og:url" content="https://giovannicasella999-it.github.io/shop-di-rebby/">
+<meta property="og:type" content="website">
+
+<!-- Per dispositivi mobili -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
 
@@ -35,6 +53,11 @@
 	<option value="ambiente">Ambiente</option>
     <option value="solare">Solari</option>
   </select>
+  <select id="ordinamento">
+      <option value="default">Ordina per</option>
+      <option value="prezzo-crescente">Prezzo crescente</option>
+      <option value="prezzo-decrescente">Prezzo decrescente</option>
+    </select>
 </div>
 
 <section class="prodotti">
@@ -187,8 +210,45 @@ Famiglia olfattiva: Floreale, fruttata gourmand.<br>
 
   <div class="footer-spacer"></div>
   <footer>
-    &copy; 2025 Shop di Rebby - Tutti i diritti riservati
-  </footer>
+  Shop di Rebby © 2025<br>
+  <div class="contatti">
+    <a href="mailto:giovannicasella999@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+    <a href="https://wa.me/393514454625" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="https://instagram.com/rebe_casamento04" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+  </div>
+</footer>
 
+
+  <div id="torna-su" onclick="scrollToTop()">↑</div>
+
+  <script>
+    // Mostra/nascondi pulsante "torna su"
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('torna-su');
+      if (window.scrollY > 300) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Ordinamento prodotti
+    document.getElementById('ordinamento').addEventListener('change', function () {
+      const criterio = this.value;
+      const container = document.querySelector('.prodotti');
+      const prodotti = Array.from(container.children);
+      if (criterio === 'prezzo-crescente') {
+        prodotti.sort((a, b) => parseFloat(a.dataset.prezzo) - parseFloat(b.dataset.prezzo));
+      } else if (criterio === 'prezzo-decrescente') {
+        prodotti.sort((a, b) => parseFloat(b.dataset.prezzo) - parseFloat(a.dataset.prezzo));
+      }
+      container.innerHTML = '';
+      prodotti.forEach(p => container.appendChild(p));
+    });
+  </script>
 </body>
 </html>
