@@ -175,10 +175,15 @@ footer .contatti i {
 }
 
 .promo-bar {
-  background-color: red;   /* Colore di sfondo rosso */
-  color: white;            /* Testo bianco */
-  text-align: center;      /* Testo centrato */
-  font-weight: bold;       /* Grassetto */
-  padding: 2px 0;         /* Spazio sopra e sotto */
-  font-size: 18px;         /* Dimensione testo */
+  width: 100%;              /* Occupa tutta la larghezza */
+  background-color: red;    /* Sfondo rosso */
+  color: white;             /* Testo bianco */
+  text-align: center;       /* Centra il testo */
+  font-weight: bold;        /* Testo in grassetto */
+  padding: 12px 8px;        /* Spaziatura */
+  font-size: 16px;          /* Dimensione testo */
+  box-sizing: border-box;   /* Evita problemi di larghezza */
+  display: block;           /* Forza la barra come blocco */
+  z-index: 1000;            /* Sopra gli altri elementi */
 }
+
