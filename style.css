@@ -173,3 +173,12 @@ footer .contatti a {
 footer .contatti i {
   margin-right: 6px;
 }
+
+.promo-bar {
+  background-color: red;   /* Colore di sfondo rosso */
+  color: white;            /* Testo bianco */
+  text-align: center;      /* Testo centrato */
+  font-weight: bold;       /* Grassetto */
+  padding: 2px 0;         /* Spazio sopra e sotto */
+  font-size: 18px;         /* Dimensione testo */
+}
