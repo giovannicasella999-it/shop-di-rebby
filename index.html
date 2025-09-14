@@ -44,9 +44,8 @@
 
 <!-- Barra promozionale -->
 <div class="promo-bar">
-  <p>Sconto del 20% su tutto il sito fino ad esaurimento scorte!</p>
+  <p>Il packaging dei profumi potrebbe subire delle variazioni di scatola e bottiglia rispetto alle foto.</p>
 </div>
-
 
 <div id="filtri">
   <input type="text" id="barra-ricerca" placeholder="Cerca un prodotto...">
@@ -60,11 +59,6 @@
 	<option value="ambiente">Ambiente</option>
     <option value="solare">Solari</option>
   </select>
-  <select id="ordinamento">
-      <option value="default">Ordina per</option>
-      <option value="prezzo-crescente">Prezzo crescente</option>
-      <option value="prezzo-decrescente">Prezzo decrescente</option>
-    </select>
 </div>
 
 <section class="prodotti">
@@ -96,46 +90,34 @@ document.addEventListener('DOMContentLoaded', () => {
    <div class="prodotto" data-disponibile="true" data-nome="Matita Nera Waterproof" data-prezzo="2.00" data-categoria="trucchi">
     <img src="immagini/matita-nera.jpg" alt="Matita Nera Waterproof">
   <h2>Matita Nera Waterproof</h2>
-  <p>La matita nera waterproof per occhi mette in evidenza perfettamente i tuoi occhi e dona loro uno sguardo profondo e seducente.<br>
   <p class="prezzo">€2,00</p>
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20alla%20matita%20nera%20da%20€2,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
   
-  <div class="prodotto non-disponibile">
-  <img src="immagini/mascara-curl.jpg" alt="Mascara Curl Waterproof" data-prezzo="4.00" data-categoria="trucchi">
+    <div class="prodotto" data-disponibile="true" data-nome="Mascara Curl Waterproof" data-prezzo="4.00" data-categoria="trucchi">
+    <img src="immagini/mascara-curl.jpg" alt="Mascara Curl Waterproof">
   <h2>Mascara Curl Waterproof</h2>
-  <p>Il CURL MASCARA DDONNA adotta una formula perfezionata che offre sia un volume XXL immediato che una definizione ciglia per ciglia, spiegate che sembrano moltiplicate<br>
   <p class="prezzo">€4,00</p>
-  <p class="disponibilita">PRODOTTO ESAURITO</p>
-  <a href="https://wa.me/393514454625?text=Ciao,%20volevo%20sapere%20se%20il%20mascara%20curl%20da%20€4,00%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
-</div>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20mascara%20curl%20da%20€4,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
   
       <div class="prodotto" data-disponibile="true" data-nome="Mascara 5D Lash Push" data-prezzo="4.00" data-categoria="trucchi">
     <img src="immagini/mascara-5d.jpg" alt="Mascara 5D Lash Push">
   <h2>Mascara 5D Lash Push</h2>
-  <p>Dì addio al piegaciglia! 5D LASH PUSH UP, è un vero e proprio donatore di volume per le ciglia.<br>
-Il suo scovolino Hook ‘n’ Roll cattura, separa, allunga e incurva le ciglia per un look sempre perfetto, istantaneo dura 12 ore.<br>
   <p class="prezzo">€4,00</p>
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20mascara%205d%20lash%20push%20da%20€4,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
   
-  <div class="prodotto non-disponibile">
-  <img src="immagini/palette-nyx.jpg" alt="Palette Nyx Diamond" data-prezzo="8.00" data-categoria="trucchi">
+      <div class="prodotto" data-disponibile="true" data-nome="Palette Nyx Diamond" data-prezzo="8.00" data-categoria="trucchi">
+    <img src="immagini/palette-nyx.jpg" alt="Palette Nyx Diamond">
   <h2>Palette Nyx Diamond</h2>
-  <p>Se hai bisogno di una palette di illuminanti completa, non devi più cercare!
-Illuminanti con cui dare un tocco di luce naturale oppure così accecante che ti potranno vedere fin dallo spazio.<br>
- Con 4 toni differenti potrai scegliere il tuo illuminante preferito o mixarli tra loro per ottenere un tono unico e adatto al tuo tono di pelle. <br>
   <p class="prezzo">€8,00</p>
-  <p class="disponibilita">PRODOTTO ESAURITO</p>
-  <a href="https://wa.me/393514454625?text=Ciao,%20volevo%20sapere%20se%20la%20palette%20Nyx%20da%20€8,00%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
-</div>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20alla%20palette%20Nyx%20di%20illuminanti%20da%20€8,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
   
         <div class="prodotto" data-disponibile="true" data-nome="L'Oreal Infallible Sculpt Contouring" data-prezzo="5.00" data-categoria="trucchi">
     <img src="immagini/sculpt.jpg" alt="L'Oreal Infallible Sculpt Contouring">
   <h2>L'Oreal Infallible Sculpt Contouring</h2>
-  <p>Palette Contouring L'Oréal Makeup Infallible Sculpt Color 01 Light/Medium La palette Infallible Sculpt è appositamente studiata per il contouring del viso.<br>
-Questa innovativa palette L'Oréal presenta due tonalità che aggiungono luce e ombra al viso.<br>
-Evidenzia i punti luce e nascondi i difetti. Scopri la sua formula innovativa, dove crema e polvere lavorano insieme.<br>
   <p class="prezzo">€5,00</p>
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20contouring%20L'Oreal%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
@@ -143,7 +125,6 @@ Evidenzia i punti luce e nascondi i difetti. Scopri la sua formula innovativa, d
           <div class="prodotto" data-disponibile="true" data-nome="Matita Labbra L'Oreal Red 105" data-prezzo="4.00" data-categoria="trucchi">
     <img src="immagini/matita-loreal-red.jpg" alt="Matita Labbra L'Oreal Red 105">
   <h2>Matita Labbra L'Oreal Red 105</h2>
-  <p>Matita labbra a lunga tenuta anti-sbavatura. Per labbra definite in ogni occasione. Colorazione 105 RED
   <p class="prezzo">€4,00</p>
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20alla%20matita%20labbra%20%20L'Oreal%20da%20€4,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
@@ -151,9 +132,6 @@ Evidenzia i punti luce e nascondi i difetti. Scopri la sua formula innovativa, d
             <div class="prodotto" data-disponibile="true" data-nome="Maybelline Lip Gloss 720" data-prezzo="4.00" data-categoria="trucchi">
     <img src="immagini/maybelline-lip-720.jpg" alt="Maybelline Lip Gloss 720">
   <h2>Maybelline Lip Gloss 720</h2>
-  <p>Supera le tue aspettative di labbra perfettamente radiose: il lucidalabbra Maybelline Lip Gloss fornisce un risultato così abbagliante che non vorrai più nessun altro prodotto. 
-  Con questo lucidalabbra, le tue labbra saranno visibilmente lisce e avranno finalmente l’aspetto che hai sempre desiderato. 
-  Tutto questo con un solo tocco grazie all’applicatore extra large.<br>
   <p class="prezzo">€4,00</p>
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20lip%20gloss%20Maybelline%20720%20da%20€4,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
@@ -161,82 +139,433 @@ Evidenzia i punti luce e nascondi i difetti. Scopri la sua formula innovativa, d
               <div class="prodotto" data-disponibile="true" data-nome="Maybelline Lip Gloss 705" data-prezzo="5.00" data-categoria="trucchi">
     <img src="immagini/maybelline-lip-705.jpg" alt="Maybelline Lip Gloss 705">
   <h2>Maybelline Lip Gloss 705</h2>
-  <p>Supera le tue aspettative di labbra perfettamente radiose: il lucidalabbra Maybelline Lip Gloss fornisce un risultato così abbagliante che non vorrai più nessun altro prodotto. 
-  Con questo lucidalabbra, le tue labbra saranno visibilmente lisce e avranno finalmente l’aspetto che hai sempre desiderato. 
-  Tutto questo con un solo tocco grazie all’applicatore extra large.<br>
   <p class="prezzo">€5,00</p>
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20lip%20gloss%20Maybelline%20705%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
   
-    <div class="prodotto" data-disponibile="true" data-nome="Nyx Gel Lipstick" data-prezzo="5.00" data-categoria="trucchi">
+                <div class="prodotto" data-disponibile="true" data-nome="Nyx Gel Lipstick" data-prezzo="5.00" data-categoria="trucchi">
     <img src="immagini/nyx-rossetto.jpg" alt="Nyx Gel Lipstick">
   <h2>Nyx Gel Lipstick</h2>
-  <p>Un rossetto lucido dalla coprenza da leggera a media.<br>
-Il rossetto Plush Gel dona alle labbra un tocco di colore e lucentezza.<br>
-La coprenza è modulabile! Applica il rossetto una volta per un finish trasparente o due volte per un tono più intenso.<br>
-Applica questo rossetto da solo o sopra un rossetto abbinato per labbra più definite.<br>
   <p class="prezzo">€5,00</p>
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20gel%20labbra%20Nyx%20705%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
   
-    <div class="prodotto" data-disponibile="true" data-nome="Maybelline rossetto 499" data-prezzo="5.00" data-categoria="trucchi">
+                  <div class="prodotto" data-disponibile="true" data-nome="Maybelline rossetto 499" data-prezzo="5.00" data-categoria="trucchi">
     <img src="immagini/maybelline-rossetto.jpg" alt="Maybelline Rossetto 499">
   <h2>Maybelline rossetto 499</h2>
-Il rossetto Maybelline Color Sensational Ultimatte Slim offre una finitura opaca estrema con una texture leggera e confortevole.<br>
-Nuove tonalità di rossetto sensazionali; ottieni un colore intenso con questo rossetto opaco leggero. Formula con pigmenti colorati ad alto impatto.<br>
-Il rossetto Ultimate Matte ora offre comfort; ottieni una texture morbida e leggera con il nostro rossetto ad alto impatto, che non secca e scorre facilmente.<br>
-Il rossetto Maybelline ora disponibile in un packaging sottile e lussuoso che ti regala una sensazione sensazionale dal momento in cui lo prendi fino alla sua applicazione fluida.<br>
   <p class="prezzo">€5,00</p>
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20rossetto%20Maybelline%20499%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
   
-  <div class="prodotto non-disponibile">
-  <img src="immagini/kyra-rosa-deo.jpg" alt="Kyra Rosa - Deodorante Arabo" data-prezzo="3.50" data-categoria="deodorante">
-    <h2>Kyra Rosa - Deodorante Arabo</h2>
-    <p>AFAQ Body Spray Kyra 200ml è un body spray femminile ispirato a Yara di Lattafa, una delle fragranze più amate per la sua dolcezza cremosa e il suo stile moderno. <br> Ideale per chi cerca un profumo delicato ma persistente, elegante e avvolgente. <br>
-La profumazione si distingue per un mix armonioso di note fruttate, floreali e muschiate che coccolano i sensi e lasciano una scia morbida e femminile sulla pelle. <br>
-Il formato spray rende Kyra pratico da usare ogni giorno, perfetto da portare sempre con sé per un tocco di freschezza e profumo in ogni momento.</p>
-  <p class="prezzo">€3,50</p>
-  <p class="disponibilita">PRODOTTO ESAURITO</p>
-  <a href="https://wa.me/393514454625?text=Ciao,%20volevo%20sapere%20se%20il%20deodorante%20Kyra%20Rosa%20da%20€3,50%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
-</div>
-  
-  <div class="prodotto non-disponibile">
-  <img src="immagini/kyra-gold-deo.jpg" alt="Kyra Gold - Deodorante Arabo" data-prezzo="3.50" data-categoria="deodorante">
-    <h2>Kyra Gold - Deodorante Arabo</h2>
-    <p>AFAQ Body Spray Kyra Gold 200ml è un body spray femminile ispirato a Yara Tous di Lattafa, una fragranza cremosa, delicata e moderna, pensata per la donna che ama distinguersi con eleganza e dolcezza. <br>
-La profumazione unisce note floreali raffinate a sfumature leggermente gourmand e muschiate, creando un equilibrio perfetto tra sensualità e leggerezza. Ideale da indossare tutti i giorni, Kyra Gold dona una sensazione di comfort, femminilità e sicurezza. <br>
-Il pratico formato da 200ml permette un utilizzo quotidiano e comodo in ogni momento della giornata, lasciando la pelle fresca e profumata a lungo.</p>
-  <p class="prezzo">€3,50</p>
-  <p class="disponibilita">PRODOTTO ESAURITO</p>
-  <a href="https://wa.me/393514454625?text=Ciao,%20volevo%20sapere%20se%20il%20deodorante%20Kyra%20Gold%20da%20€3,50%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
-</div>
-
-  <div class="prodotto non-disponibile">
-  <img src="immagini/palette1.jpg" alt="Revolution Salvation Palette" data-prezzo="8.00" data-categoria="trucchi">
+ <div class="prodotto" data-disponibile="true" data-nome="Revolution Salvation Palette" data-prezzo="8.00" data-categoria="trucchi">
+    <img src="immagini/palette1.jpg" alt="Revolution Salvation Palette">
   <h2>Revolution Salvation Palette</h2>
-  <p>Palette Salvation di Revolution London è una meravigliosa collezione di ombretti.<br>
-  Questi colori per occhi, altamente pigmentati e sfumabili, sono presentati in una gamma di tonalità opache e scintillanti che scivolano sulla palpebra per creare tantissimi look caldi e favolosi.<br>
   <p class="prezzo">€8,00</p>
-  <p class="disponibilita">PRODOTTO ESAURITO</p>
-  <a href="https://wa.me/393514454625?text=Ciao,%20volevo%20sapere%20se%20la%20palette%20Revolution%20da%20€8,00%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
-</div>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20alla%20palette%20Revolution%20Salvation%20da%20€8,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
 
  <div class="prodotto" data-disponibile="true" data-nome="Revolution Soft Glamour Palette" data-prezzo="8.00" data-categoria="trucchi">
     <img src="immagini/palette2.jpg" alt="Revolution Soft Glamour Palette">
   <h2>Revolution Soft Glamour Palette</h2>
-  <p>Palette Soft Glamour di Revolution London è una meravigliosa collezione di ombretti.<br>
-  Questi colori per occhi, altamente pigmentati e sfumabili, sono presentati in una gamma di tonalità scintillanti che scivolano sulla palpebra per creare tantissimi look caldi e favolosi.<br>
   <p class="prezzo">€8,00</p>
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20alla%20palette%20Revolution%20Soft%20Glamour%20da%20€8,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
+  
+ <div class="prodotto" data-disponibile="true" data-nome="Kyra Rosa - Deodorante Arabo" data-prezzo="3.50" data-categoria="deodorante">
+  <img src="immagini/kyra-rosa-deo.jpg" alt="Kyra Rosa - Deodorante Arabo">
+    <h2>Kyra Rosa - Deodorante Arabo</h2>
+    <p class="prezzo">€3,50</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20deodorante%20Kyra%20Rosa%20da%20€3,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+ <div class="prodotto" data-disponibile="true" data-nome="Kyra Gold - Deodorante Arabo" data-prezzo="3.50" data-categoria="deodorante">
+  <img src="immagini/kyra-gold-deo.jpg" alt="Kyra Gold - Deodorante Arabo">
+    <h2>Kyra Gold - Deodorante Arabo</h2>
+    <p class="prezzo">€3,50</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20deodorante%20Kyra%20Gold%20da%20€3,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+ <div class="prodotto" data-disponibile="true" data-nome="Kyra Rosa - Profumo Arabo" data-prezzo="10.00" data-categoria="profumo">
+  <img src="immagini/kyra-rosa-profumo.jpg" alt="Kyra Rosa - Profumo Arabo">
+    <h2>Kyra Rosa - Profumo Arabo</h2>
+    <p class="prezzo">€10,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Kyra%20Rosa%20da%20€10,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+ <div class="prodotto" data-disponibile="true" data-nome="Kyra Sweet - Profumo Arabo" data-prezzo="10.00" data-categoria="profumo">
+  <img src="immagini/kyra-sweet.jpg" alt="Kyra Sweet - Profumo Arabo">
+    <h2>Kyra Sweet - Profumo Arabo</h2>
+    <p class="prezzo">€10,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Kyra%20Sweet%20da%20€10,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+ <div class="prodotto" data-disponibile="true" data-nome="Aswad - Profumo Arabo" data-prezzo="10.00" data-categoria="profumo">
+  <img src="immagini/aswad.jpg" alt="Aswad - Profumo Arabo">
+  <h2>Aswad - Profumo arabo</h2>
+    <p class="prezzo">€10,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Aswad%20da%20€10,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
 
+<div class="prodotto" data-disponibile="true" data-nome="Bianco Latte - Blanc Cremèo" data-prezzo="5.00" data-categoria="profumo">
+  <img src="immagini/bianco-latte.jpg" alt="Bianco Latte - Blanc Cremè">
+  <h2>Bianco Latte - Blanc Cremè</h2>
+  <p class="prezzo">€5,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Bianco%20Latte%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+  <div class="prodotto" data-disponibile="true" data-nome="Bianco Latte - Toscane Blanc" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/bianco-latte2.jpg" alt="Bianco Latte - Toscane Blanc">
+  <h2>Bianco Latte - Toscane Blanc</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Bianco%20Latte%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+    <div class="prodotto" data-disponibile="true" data-nome="Acqua di Gioia di Giorgio Armani" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/acqua-di-gloria.jpg" alt="Acqua di Gioia di Giorgio Armani">
+  <h2>Acqua di Gioia di Giorgio Armani</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Acqua%20di%20gioia%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+        <div class="prodotto" data-disponibile="true" data-nome="Acqua di Giò di Giorgio Armani" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/acqua-di-mais.jpg" alt="Acqua di Giò di Giorgio Armani">
+  <h2>Acqua di Giò di Giorgio Armani</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Acqua%20di%20giò%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+          <div class="prodotto" data-disponibile="true" data-nome="Eau Sauvage di Christian Dior" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/agua-salvaje.jpg" alt="Eau Sauvage di Christian Dior">
+  <h2>Eau Sauvage di Christian Dior</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Eau%20Sauvage%20di%20Dior%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+            <div class="prodotto" data-disponibile="true" data-nome="Alien di Thierry Mugler" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/allien.jpg" alt="Alien di Thierry Mugler">
+  <h2>Alien di Thierry Mugler</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Alien%20di%20Mugler%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+              <div class="prodotto" data-disponibile="true" data-nome="Angel di Thierry Mugler" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/angelus.jpg" alt="Angel di Thierry Mugler">
+  <h2>Angel di Thierry Mugler</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Angel%20di%20Mugler%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+              <div class="prodotto" data-disponibile="true" data-nome="Allure di Chanel" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/alude.jpg" alt="Allure di Chanel">
+  <h2>Allure di Chanel</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Allure%20di%20Chanel%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+                <div class="prodotto" data-disponibile="true" data-nome="Allure Sport di Chanel" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/alude-sport.jpg" alt="Allure Sport di Chanel">
+  <h2>Allure Sport di Chanel</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Allure%20Sport%20di%20Chanel%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+                  <div class="prodotto" data-disponibile="true" data-nome="Amor Amor di Cacharel" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/amor.jpg" alt="Amor Amor di Cacharel">
+  <h2>Amor Amor di Cacharel</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Amor%20Amor%20di%20Cacharel%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+                    <div class="prodotto" data-disponibile="true" data-nome="Amor Amor Tentation di Cacharel" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/amor-seduccion.jpg" alt="Amor Amor Tentation di Cacharel">
+  <h2>Amor Amor Tentation di Cacharel</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Amor%20Tentation%20di%20Cacharel%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+                      <div class="prodotto" data-disponibile="true" data-nome="Polo Black di Ralph Lauren" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/apolo-black.jpg" alt="Polo Black di Ralph Lauren">
+  <h2>Polo Black di Ralph Lauren</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Polo%20Black%20di%20Ralph%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+                        <div class="prodotto" data-disponibile="true" data-nome="Polo Red di Ralph Lauren" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/apolo-red.jpg" alt="Polo Red di Ralph Lauren">
+  <h2>Polo Red di Ralph Lauren</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Polo%20Red%20di%20Ralph%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+                          <div class="prodotto" data-disponibile="true" data-nome="Azzaro Pour Homme" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/atzar.jpg" alt="Azzaro Pour Homme">
+  <h2>Azzaro Pour Homme</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Azzaro%20Pour%20Homme%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+                            <div class="prodotto" data-disponibile="true" data-nome="Aventus di Creed" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/avento.jpg" alt="Aventus di Creed">
+  <h2>Aventus di Creed</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Aventus%20di%20Creed%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+                              <div class="prodotto" data-disponibile="true" data-nome="La Vie Est Belle" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/bella-vida.jpg" alt="La Vie Est Belle">
+  <h2>La Vie Est Belle</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20La%20Vie%20Est%20Belle%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+                                <div class="prodotto" data-disponibile="true" data-nome="Burberry For Woman" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/berry-woman.jpg" alt="Burberry For Woman">
+  <h2>Burberry For Woman</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Burberry%20For&20Woman%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+ <div class="prodotto" data-disponibile="true" data-nome="Black XS di Paco Rabanne" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/black.jpg" alt="Black XS di Paco Rabanne">
+  <h2>Black XS di Paco Rabanne - Uomo</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Black%20XS%di%20Rabanne%20maschile%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+   <div class="prodotto" data-disponibile="true" data-nome="Black XS di Paco Rabanne" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/black-woman.jpg" alt="Black XS di Paco Rabanne">
+  <h2>Black XS di Paco Rabanne - Donna</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Black%20XS%di%20Rabanne%20femminile%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+     <div class="prodotto" data-disponibile="true" data-nome="Light Blue di Dolce e Gabbana - Uomo" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/blue-light-man.jpg" alt="Light Blue di Dolce e Gabbana - Uomo">
+  <h2>Light Blue di Dolce e Gabbana - Uomo</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Light%20Blue%di%20DeG%20maschile%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+       <div class="prodotto" data-disponibile="true" data-nome="Light Blue di Dolce e Gabbana - Donna" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/blue-light-woman.jpg" alt="Light Blue di Dolce e Gabbana - Donna">
+  <h2>Light Blue di Dolce e Gabbana - Donna</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Light%20Blue%di%20DeG%20femminile%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+    <div class="prodotto" data-disponibile="true" data-nome="Good Girl di Carolina Herrera" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/boom-girl.jpg" alt="Good Girl di Carolina Herreraa">
+  <h2>Good Girl di Carolina Herrera</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Good%20Girl%di%20Carolina%20Herrera%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+     <div class="prodotto" data-disponibile="true" data-nome="Good Girl di Carolina Herrera" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/boom-girl.jpg" alt="Good Girl di Carolina Herreraa">
+  <h2>Good Girl di Carolina Herrera</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Good%20Girl%di%20Carolina%20Herrera%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+   <div class="prodotto" data-disponibile="true" data-nome="Hugo Boss" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/bossic.jpg" alt="Hugo Boss">
+  <h2>Hugo Boss</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Hugo%20Boss%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+     <div class="prodotto" data-disponibile="true" data-nome="Boss The Scent di Hugo Boss" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/bossic-the-essentia-for-her.jpg" alt="Boss The Scent di Hugo Boss">
+  <h2>Boss The Scent di Hugo Boss</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Boss%20The%20Scent%20di%20Hugo%20Boss%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+       <div class="prodotto" data-disponibile="true" data-nome="Classique di Jean Paul Gaultier" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/classic.jpg" alt="Classique di Jean Paul Gaultier">
+  <h2>Classique di Jean Paul Gaultier</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Classique%20di%20Jean%20Paul%20Gaultier%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+         <div class="prodotto" data-disponibile="true" data-nome="Chloè" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/cloelia.jpg" alt="Chloè">
+  <h2>Chloè</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Chloè%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+           <div class="prodotto" data-disponibile="true" data-nome="Coco Chanel" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/coco.jpg" alt="Coco Chanel">
+  <h2>Coco Chanel</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Coco%20Chanel%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+  <div class="prodotto" data-disponibile="true" data-nome="Armani Code di Giorgio Armani" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/code.jpg" alt="Armani Code di Giorgio Armani">
+  <h2>Armani Code di Giorgio Armani</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Armani%20Code%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+   <div class="prodotto" data-disponibile="true" data-nome="Diamonds di Giorgio Armani" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/diamant.jpg" alt="Diamonds di Giorgio Armani">
+  <h2>Diamonds di Giorgio Armani</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Diamonds%20di%20Armani%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+  <div class="prodotto" data-disponibile="true" data-nome="J'Adore di Christian Dior" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/diore.jpg" alt="J'Adore di Christian Dior">
+  <h2>J'Adore di Christian Dior</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20J'Adore%20di%20Dior%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+ <div class="prodotto" data-disponibile="true" data-nome="Dolce di Dolce e Gabbana" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/dulce.jpg" alt="Dolce di Dolce e Gabbana">
+  <h2>Dolce di Dolce e Gabbana</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Dolce%20di%20Dolce%20e%20Gabbana%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+   <div class="prodotto" data-disponibile="true" data-nome="Lady Million di Paco Rabanne" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/lady-gold.jpg" alt="Lady Million di Paco Rabanne">
+  <h2>Lady Million di Paco Rabanne</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Lady%20Million%20di%20Paco%20Rabanne%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+     <div class="prodotto" data-disponibile="true" data-nome="Coco Mademoiselle di Chanel" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/mademoiselle.jpg" alt="Coco Mademoiselle di Chanel">
+  <h2>Coco Mademoiselle di Chanel</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Coco%20Mademoiselle%20di%20Chanel%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+       <div class="prodotto" data-disponibile="true" data-nome="Chanel n°5" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/n55.jpg" alt="Chanel n°5">
+  <h2>Chanel n°5</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Chanel%20n5%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+         <div class="prodotto" data-disponibile="true" data-nome="Narciso Rodriguez" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/narciso.jpg" alt="Narciso Rodriguez">
+  <h2>Narciso Rodriguez</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Narciso%20Rodriguez%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+           <div class="prodotto" data-disponibile="true" data-nome="Bleu di Chanel" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/navy-blue.jpg" alt="Bleu di Chanel">
+  <h2>Bleu di Chanel</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Bleu%20di%20Chanel%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+             <div class="prodotto" data-disponibile="true" data-nome="Olympèa di Paco Rabanne" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/olympia.jpg" alt="Olympèa di Paco Rabanne">
+  <h2>Olympèa di Paco Rabanne</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Olympèa%20di%20Paco%20Rabanne%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+               <div class="prodotto" data-disponibile="true" data-nome="Opium di Yves Saint Laurent" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/oppidum.jpg" alt="Opium di Yves Saint Laurent">
+  <h2>Opium di Yves Saint Laurent</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Opium%20di%20Yves%20Saint%20Laurent%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+                 <div class="prodotto" data-disponibile="true" data-nome="Black Opium di Yves Saint Laurent" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/oppidum-black.jpg" alt="Black Opium di Yves Saint Laurent">
+  <h2>Black Opium di Yves Saint Laurent</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Black%20Opium%20di%20Yves%20Saint%20Laurent%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+                   <div class="prodotto" data-disponibile="true" data-nome="Hypnotic Poison di Dior" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/pasion.jpg" alt="Hypnotic Poison di Dior">
+  <h2>Hypnotic Poison di Dior</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Hypnotic%20Poison%20di%20Dior%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+                     <div class="prodotto" data-disponibile="true" data-nome="Si di Armani" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/si.jpg" alt="Si di Armani">
+  <h2>Si di Armani</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Si%20di%20Armani%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+                       <div class="prodotto" data-disponibile="true" data-nome="Trésor di Lancome" data-prezzo="3.0" data-categoria="profumo">
+  <img src="immagini/tesoro.jpg" alt="Trésor di Lancome">
+  <h2>Trésor di Lancome</h2>
+  <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20profumo%20Trésor%20di%20Lancome%20da%20€3%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+  <div class="prodotto" data-disponibile="true" data-nome="Profumo Prady Pistacchio" data-prezzo="3.00" data-categoria="profumo">
+    <img src="immagini/pistacchio.jpg" alt="Profumo Prady Pistacchio">
+    <h2>Profumo pistacchio - Prady</h2>
+    <p class="prezzo">€3,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20Profumo%20al%20pistacchio%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+      <div class="prodotto" data-disponibile="true" data-nome="Crema Viso Notte all'acido Jaluronico" data-prezzo="5.00" data-categoria="corpo">
+    <img src="immagini/notte-acido.jpg" alt="Crema Viso Notte all'acido Jaluronico">
+    <h2>Crema Viso Notte all'acido Jaluronico</h2>
+    <p class="prezzo">€5,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20alla%20Crema%20Viso%20Notte%20All'Acido%20Jaluronico%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+        <div class="prodotto" data-disponibile="true" data-nome="Crema Viso Antiossidante Vitamina C" data-prezzo="5.00" data-categoria="corpo">
+    <img src="immagini/anti-vitamina.jpg" alt="Crema Viso Antiossidante Vitamina C">
+    <h2>Crema Viso Antiossidante Vitamina C</h2>
+    <p class="prezzo">€5,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20alla%20Crema%20Viso%20Antiossidante%20Vitamina%20C%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+          <div class="prodotto" data-disponibile="true" data-nome="Maschera Viso Rassodante Collagene" data-prezzo="5.00" data-categoria="corpo">
+    <img src="immagini/rassodante-collagene.jpg" alt="Maschera Viso Rassodante Collagene">
+    <h2>Maschera Viso Rassodante Collagene</h2>
+    <p class="prezzo">€5,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20alla%20Maschera%20Viso%20Rassodante%20Collagene%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+            <div class="prodotto" data-disponibile="true" data-nome="Burro Struccante Retinol Complex" data-prezzo="5.00" data-categoria="corpo">
+    <img src="immagini/burro-struccante.jpg" alt="Burro Struccante Retinol Complex">
+    <h2>Burro Struccante Retinol Complex</h2>
+    <p class="prezzo">€5,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20Burro%20Struccante%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+              <div class="prodotto" data-disponibile="true" data-nome="Siero Viso Antiossidante" data-prezzo="5.00" data-categoria="corpo">
+    <img src="immagini/siero-vitamina.jpg" alt="Siero Viso Antiossidante">
+    <h2>Siero Viso Antiossidante</h2>
+    <p class="prezzo">€5,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20Sietro%20Viso%20Antiossidante%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+    <div class="prodotto" data-disponibile="true" data-nome="Acqua profumata Retinol Complex vari tipi" data-prezzo="3.50" data-categoria="corpo">
+    <img src="immagini/acqua-retinol.jpg" alt="Acqua profumata Retinol Complex vari tipi">
+    <h2>Acqua profumata Retinol Complex vari tipi</h2>
+    <p class="prezzo">€3,50</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20alla%20Acqua%20profumata%20Retinol%20da%20€3,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
+  
+      <div class="prodotto" data-disponibile="true" data-nome="Bagnoschiuma Retinol Complex vari tipi" data-prezzo="3.50" data-categoria="corpo">
+    <img src="immagini/bagnoschiuma-retinol.jpg" alt="Bagnoschiuma Retinol Complex vari tipi">
+    <h2>Bagnoschiuma Retinol Complex vari tipi</h2>
+    <p class="prezzo">€3,50</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20Bagnoschiuma%20Retinol%20da%20€3,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  </div>
 
  <div class="prodotto" data-disponibile="true" data-nome="Shampoo Retinol Complex" data-prezzo="4.00" data-categoria="capelli">
-    <img src="immagini/shampoo-reti.jpg" alt="Shampoo Retinol Complex">
-    <h2>Shampoo Retinol Complex</h2>
-    <p>Shampoo protettivo e nutriente a base di proteine del latte indicato per capelli trattati chimicamente o sottoposti a decolorazioni.  <br> Dona lucentezza e morbidezza ai capelli senza appesantirli.<br>
-💎 Formato: 1000 ml </p>
+    <img src="immagini/shampoo-reti.jpg" alt="Shampoo Retinol Complex Vari Tipi">
+    <h2>Shampoo Retinol Complex vari tipi</h2>
     <p class="prezzo">€4,00</p>
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20allo%20Shampoo%20Retinol%20Complex%20da%20€4,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
@@ -244,124 +573,37 @@ Il pratico formato da 200ml permette un utilizzo quotidiano e comodo in ogni mom
   <div class="prodotto" data-disponibile="true" data-nome="Termoprotettore Retinol Complex" data-prezzo="4.00" data-categoria="capelli">
     <img src="immagini/termo.jpg" alt="Termoprotettore Retinol Complex">
     <h2>Termoprotettore Retinol Complex</h2>
-    <p>Il siero termoprotettivo per capelli è un prodotto formulato per proteggere i capelli dai danni causati dal calore e dagli agenti atmosferici<br> Durante l'uso di strumenti termini (piastre, phone e arricciacapelli) questi prodotti sono particolarmente utili per chi ne fa uso frequentemente. <br>
-	  Il prodotto serve a prevenire la secchezza, la rottura e il danneggiamento dei capelli.<br>
-💎 Formato: 250 ml </p>
     <p class="prezzo">€4,00</p>
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20Termoprotettore%20Retinol%20Complex%20da%20€4,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
   
-  <div class="prodotto" data-disponibile="true" data-nome="Spray multiuso fruttati" data-prezzo="2.50" data-categoria="ambiente">
-    <img src="immagini/spray.jpg" alt="Spray multiuso fruttati">
-      <h2>Spray multiuso fruttati</h2>
-      <p>Con lo spray deodorante per ambienti The Fruit Company, trasforma l'atmosfera della tua casa in uno spazio accogliente con un tocco morbido e fresco. <br>
-	  Questo deodorante multiuso elimina i cattivi odori, soprattutto quelli sui tessuti, grazie alla sua grande capacità di spruzzo. <br>
-	  DISPONIBILE: Zucchero filato, Mashmellow e Orsetto Gommoso<br> 
-💎 Formato: 250 ml <br> </p>
-    <p class="prezzo">€2,50</p>
-    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20allo%20Spray%20ambiente%20da%20€2,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+    <div class="prodotto" data-disponibile="true" data-nome="Confezioni Box 4pz Tulipan Negro vari tipi" data-prezzo="15.00" data-categoria="corpo">
+    <img src="immagini/box-tulipan.jpg" alt="Confezioni Box 4pz Tulipan Negro vari tipi">
+    <h2>Confezione Box 4pz Tulipan Negro vari tipi</h2>
+    <p class="prezzo">€15,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20alla%20confezione%20box%20della%20Tulipan%20da%20€15,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
-	
-	 <div class="prodotto" data-disponibile="true" data-nome="Acqua Profumata Amalfi" data-prezzo="1.50" data-categoria="corpo">
-    <img src="immagini/frutti-rossi.jpg" alt="Acqua Profumata Amalfi">
-    <h2>Acqua Profumata - Frutti Rossi</h2>
-    <p>Deliziosa acqua profumata in versione spray con profumazione ai frutti rossi per rendere più dolce la tua giornata.<br>
-💎 Formato: 190 ml </p>
-    <p class="prezzo">€1,50</p>
-    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20all'%20Acqua%20Profumata%20da%20€1,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+  
+  <div class="prodotto" data-disponibile="true" data-nome="Spray multiuso vari tipi" data-prezzo="2.50" data-categoria="ambiente">
+    <img src="immagini/spray-ambiente.jpg" alt="Spray multiuso vari tipi">
+      <h2>Spray multiuso vari tipi</h2>
+    <p class="prezzo">€2,50</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20allo%20Spray%20multiuso%20da%20€2,50" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
   
    <div class="prodotto" data-disponibile="true" data-nome="Bilboa SPF 30" data-prezzo="5.00" data-categoria="solare">
     <img src="immagini/bilboa.jpg" alt="Bilboa SPF 30">
     <h2>Bilboa Solare - Spray Cocco 30</h2>
-    <p>Protezione solare alta SPF 30 con filtri avanzati per un'abbronzatura luminosa e dorata da subito grazie alla formula leggera effetto seta sulla pelle che non appiccica <br>
-	  La linea Coconut Glow con olio di cocco per una pelle sublime, luminosa e bella e con l’inconfondibile ed irresistibile profumo di cocco. <br>
-💎 Formato: 250 ml</p>
     <p class="prezzo">€5,00</p>
     <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20alla%20Crema%20Solare%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
   
-  <div class="prodotto" data-disponibile="true" data-nome="Profumo Prady Pistacchio" data-prezzo="3.00" data-categoria="profumo">
-    <img src="immagini/pistacchio.jpg" alt="Profumo Prady Pistacchio">
-    <h2>Profumo pistacchio - Prady</h2>
-    <p>Profumo delicato ed elegante, dall'aroma fresco e morbido, ideale per l'uso quotidiano.<br>
-Famiglia olfattiva: Floreale, fruttata gourmand.<br>
-💎 Formato: 85 ml</p>
-    <p class="prezzo">€3,00</p>
-    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20Profumo%20al%20pistacchio%20da%20€3,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
+     <div class="prodotto" data-disponibile="true" data-nome="Unguento" data-prezzo="5.00" data-categoria="solare">
+    <img src="immagini/unguento.jpg" alt="Unguento">
+    <h2>Unguento Super Abbronzante di Pharma Complex</h2>
+    <p class="prezzo">€5,00</p>
+    <a href="https://wa.me/393514454625?text=Ciao,%20sono%20interessata%20al%20nguento%20Super%20Abbronzante%20da%20€5,00" target="_blank" class="whatsapp-btn">Ordina su WhatsApp</a>
   </div>
-  
-  <div class="prodotto non-disponibile">
-  <img src="immagini/kyra-rosa-profumo.jpeg" alt="Kyra Rosa - Profumo Arabo" data-prezzo="10.00" data-categoria="profumo">
-    <h2>Kyra Rosa - Profumo Arabo</h2>
-    <p>Lasciati conquistare da Kyra, una fragranza che unisce la dolcezza cremosa della vaniglia alla profondità seducente delle spezie orientali. Pensata per una donna sicura di sé, che ama lasciare il segno con eleganza e mistero. <br>
-Un profumo dall’anima calda, elegante e persistente, perfetto per chi ama le fragranze avvolgenti che durano tutto il giorno. <br>
- ✨ Piramide olfattiva <br>
- Note di testa: Zenzero, Cannella, Pepe rosa <br>
-Note di cuore: Fiori bianchi, Ambra, Vaniglia bourbon <br>
-Note di fondo: Muschio, Legno di sandalo, Fava tonka <br>
-💎 Formato: 100 ml</p>
-  <p class="prezzo">€10,00</p>
-  <p class="disponibilita">PRODOTTO ESAURITO</p>
-  <a href="https://wa.me/393514454625?text=Ciao,%20volevo%20sapere%20se%20il%20Profumo%20Kyra%20Rosa%20da%20€10,00%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
-</div>
-  
- <div class="prodotto non-disponibile">
-  <img src="immagini/kyra-gold.jpeg" alt="Kyra Gold - Profumo Arabo" data-prezzo="10.00" data-categoria="profumo">
-    <h2>Kyra Gold - Profumo Arabo</h2>
-    <p>Lasciati conquistare da Kyra, una fragranza che unisce la dolcezza cremosa della vaniglia alla profondità seducente delle spezie orientali. Pensata per una donna sicura di sé, che ama lasciare il segno con eleganza e mistero.<br>
-Un profumo dall’anima calda, elegante e persistente, perfetto per chi ama le fragranze avvolgenti che durano tutto il giorno.<br>
- ✨ Piramide olfattiva<br>
- Note di testa: Zenzero, Cannella, Pepe rosa<br>
-Note di cuore: Fiori bianchi, Ambra, Vaniglia bourbon<br>
-Note di fondo: Muschio, Legno di sandalo, Fava tonka<br>
-💎 Formato: 100 ml<br>
-  <p class="prezzo">€10,00</p>
-  <p class="disponibilita">PRODOTTO ESAURITO</p>
-  <a href="https://wa.me/393514454625?text=Ciao,%20volevo%20sapere%20se%20il%20Profumo%20Kyra%20Gold%20da%20€10,00%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
-</div>
-  
- <div class="prodotto non-disponibile">
-  <img src="immagini/kyra-sweet.jpeg" alt="Kyra Sweet - Profumo Arabo" data-prezzo="10.00" data-categoria="profumo">
-    <h2>Kyra Sweet - Profumo Arabo</h2>
-    <p>Kyra Sweet è una fragranza calda, avvolgente e ultra femminile, pensata per donne romantiche ma decise. Racchiusa in un flacone elegante color fucsia e oro, questa essenza è una vera dichiarazione di fascino e dolcezza.<br>
-🔹 Famiglia olfattiva: Orientale Gourmand<br>
-🌿 Piramide olfattiva:<br>
-Note di testa: Frutti rossi, Mandarino, Zafferano<br>
-Note di cuore: Rosa, Caramello, Note talcate<br>
-Note di fondo: Vaniglia, Ambra, Muschio bianco<br>
-💎 Formato: 100 ml<br>
-  <p class="prezzo">€10,00</p>
-  <p class="disponibilita">PRODOTTO ESAURITO</p>
-  <a href="https://wa.me/393514454625?text=Ciao,%20volevo%20sapere%20se%20il%20Profumo%20Kyra%20Sweet%20da%20€10,00%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
-</div>
-
-  
- <div class="prodotto non-disponibile">
-  <img src="immagini/aswad.jpg" alt="Aswad - Profumo arabo" data-prezzo="10.00" data-categoria="profumo">
-  <h2>Aswad - Profumo arabo</h2>
-  <p>Nero come la notte, profondo come lo sguardo di chi lascia il segno. <br>
-Aswad, che in arabo significa nero, è una fragranza misteriosa, avvolgente e ricca di fascino. Pensata per chi ama profumi intensi, caldi e raffinati, capaci di raccontare forza e carisma. <br>
- ✨ Piramide olfattiva <br>
- Note di testa: Cannella, Pepe rosa, Noce moscata <br>
-Note di cuore: Cuoio, Incenso, Patchouli <br>
-Note di fondo: Ambra, Vaniglia, Legno di sandalo <br>
-💎 Formato: 100 ml <br> </p>
-  <p class="prezzo">€10,00</p>
-  <p class="disponibilita">PRODOTTO ESAURITO</p>
-  <a href="https://wa.me/393514454625?text=Ciao,%20volevo%20sapere%20se%20il%20Profumo%20Aswad%20Arabo%20da%20€10,00%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
-</div>
-
-<div class="prodotto non-disponibile">
-  <img src="immagini/bianco-latte.jpg" alt="Bianco Latte - Blanc Cremè" data-prezzo="5.00" data-categoria="profumo">
-  <h2>Bianco Latte - Blanc Cremè</h2>
-  <p>Blanc Creme è la fragranza unisex equivalente del famosissimo profumo Bianco Latte di Giardini di Toscana. <br> 
-E' un eau de parfum molto intenso e persistente, ed inoltre ha la bottiglia similare, che lo rende unico ed inconfondibile.</p>
-  💎 Formato: 100 ml <br> </p>
-  <p class="prezzo">€5,00</p>
-  <p class="disponibilita">PRODOTTO ESAURITO</p>
-  <a href="https://wa.me/393514454625?text=Ciao,%20volevo%20sapere%20se%20il%20Profumo%20Bianco%20Latte%20da%20€5,00%20è%20disponibile." target="_blank" class="whatsapp-btn chiedi-disponibilita">Chiedi disponibilità</a>
-</div>
 
 <!-- Il resto del codice dei prodotti rimane invariato. Aggiungi a ogni div "data-categoria" con valori come "profumo", "deodorante", "capelli", "solare", oppure lascia senza per "altro". -->
 
